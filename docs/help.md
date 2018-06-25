@@ -12,6 +12,17 @@ rmvirtualenv virtualPythonname
 
 安装django mysqlclient pillow
 
+Django              1.9    
+django-crispy-forms 1.7.2  
+django-formtools    2.1    
+httplib2            0.9.2  
+mysqlclient         1.3.12 
+Pillow              5.1.0  
+pip                 10.0.1 
+setuptools          39.2.0 
+wheel               0.31.1 
+
+
 创建新项目
 
 
