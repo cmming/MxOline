@@ -17,7 +17,7 @@ class Course(models.Model):
     fav_nums = models.IntegerField(default=0, verbose_name='收藏人数')
     image = models.ImageField(upload_to='courses/%Y/%m', verbose_name='课程封面')
     click_nums = models.IntegerField(default=0, verbose_name='电击次数')
-    add_time = models.DateField(default=datetime, verbose_name='添加时间')
+    add_time = models.DateField(default=datetime.now, verbose_name='添加时间')
 
     class Meta:
         verbose_name = '课程'
@@ -27,7 +27,7 @@ class Course(models.Model):
 class Lession(models.Model):
     course = models.ForeignKey(Course, verbose_name='课程')
     name = models.CharField(max_length=100, verbose_name='章节名')
-    add_time = models.DateField(default=datetime, verbose_name='添加时间')
+    add_time = models.DateField(default=datetime.now, verbose_name='添加时间')
 
     class Meta:
         verbose_name = '章节'
@@ -37,7 +37,7 @@ class Lession(models.Model):
 class Video(models.Model):
     lession = models.ForeignKey(Lession, verbose_name='章节')
     name = models.CharField(max_length=100, verbose_name='视频名')
-    add_time = models.DateField(default=datetime, verbose_name='添加时间')
+    add_time = models.DateField(default=datetime.now, verbose_name='添加时间')
 
     class Meta:
         verbose_name = '视频'

@@ -42,8 +42,8 @@ INSTALLED_APPS = [
     'courses',
     'organization',
     'operation',
-    'xadmin',
-    'crispy_forms'
+    # 'xadmin',
+    # 'crispy_forms'
 ]
 AUTH_USER_MODEL = 'users.UserProfile'
 
@@ -94,9 +94,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'mxonline',
         'HOST': '127.0.0.1',
-        'PORT': '8889',
+        'PORT': '3306',
         'USER': 'root',
-        'PASSWORD': 'root',
+        'PASSWORD': '',
     }
 }
 

@@ -10,7 +10,7 @@ from django.db import models
 class CityDict(models.Model):
     name = models.CharField(max_length=20, verbose_name='城市名称')
     desc = models.CharField(max_length=300, verbose_name='描述')
-    add_time = models.DateField(default=datetime, verbose_name='添加时间')
+    add_time = models.DateField(default=datetime.now, verbose_name='添加时间')
 
     class Meta:
         verbose_name = '城市'
@@ -24,7 +24,7 @@ class CourseOrg(models.Model):
     click_nums = models.IntegerField(default=0, verbose_name='电击次数')
     fav_nums = models.IntegerField(default=0, verbose_name='收藏人数')
     address = models.CharField(max_length=150, verbose_name='机构地址')
-    add_time = models.DateField(default=datetime, verbose_name='添加时间')
+    add_time = models.DateField(default=datetime.now, verbose_name='添加时间')
     city = models.ForeignKey(CityDict)
 
     class Meta:
@@ -41,7 +41,7 @@ class Teacher(models.Model):
     point = models.CharField(max_length=50, verbose_name='特点')
     click_nums = models.IntegerField(default=0, verbose_name='电击次数')
     fav_nums = models.IntegerField(default=0, verbose_name='收藏人数')
-    add_time = models.DateField(default=datetime, verbose_name='添加时间')
+    add_time = models.DateField(default=datetime.now, verbose_name='添加时间')
 
     class Meta:
         verbose_name = '教师'
