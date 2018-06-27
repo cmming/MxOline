@@ -3,7 +3,20 @@ __author__ = 'chmi'
 __data__ = '2018/6/24 17:40'
 
 import xadmin
+from xadmin import views
+
 from .models import EmailVerifyRecord, Banner
+
+
+class BaseSetting(object):
+    enable_themes = True
+    use_bootswatch = True
+
+
+class GlobalSetting(object):
+    site_title = "管理系统"
+    site_footer = "chmi"
+    menu_style ="accordion"
 
 
 class EmailVerifyRecordAdmin(object):
@@ -22,3 +35,6 @@ class BannerdAdmin(object):
 
 
 xadmin.site.register(Banner, BannerdAdmin)
+xadmin.site.register(views.BaseAdminView, BaseSetting)
+xadmin.site.register(views.CommAdminView, GlobalSetting)
+
