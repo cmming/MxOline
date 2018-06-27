@@ -23,6 +23,9 @@ class Course(models.Model):
         verbose_name = '课程'
         verbose_name_plural = verbose_name
 
+    def __unicode__(self):
+        return self.name
+
 
 class Lession(models.Model):
     course = models.ForeignKey(Course, verbose_name='课程')
@@ -33,6 +36,9 @@ class Lession(models.Model):
         verbose_name = '章节'
         verbose_name_plural = verbose_name
 
+    def __unicode__(self):
+        return self.name
+
 
 class Video(models.Model):
     lession = models.ForeignKey(Lession, verbose_name='章节')
@@ -42,6 +48,9 @@ class Video(models.Model):
     class Meta:
         verbose_name = '视频'
         verbose_name_plural = verbose_name
+
+    def __unicode__(self):
+        return self.name
 
 
 class CourseResource(models.Model):

@@ -13,4 +13,26 @@ class CourseAdmin(object):
     list_filter = ['name', 'desc', 'add_time']
 
 
+class LessionAdmin(object):
+    list_display = ['course', 'name', 'add_time']
+    search_fields = ['course', 'name', 'add_time']
+    # 课程名的外键
+    list_filter = ['course__name', 'name', 'add_time']
+
+
+class VideoAdmin(object):
+    list_display = ['lession', 'name', 'add_time']
+    search_fields = ['lession', 'name', 'add_time']
+    list_filter = ['lession__name', 'name', 'add_time']
+
+
+class CourseResourceAdmin(object):
+    list_display = ['course', 'name', 'download', 'add_time']
+    search_fields = ['lession', 'name', 'add_time']
+    list_filter = ['course__name', 'name', 'add_time']
+
+
 xadmin.site.register(Course, CourseAdmin)
+xadmin.site.register(Lession, LessionAdmin)
+xadmin.site.register(Video, VideoAdmin)
+xadmin.site.register(CourseResource, CourseResourceAdmin)
