@@ -2,3 +2,4 @@ node_modules/
 .idea/
 /extra_apps/xadmin/*.pyc
 *.pyc
+/apps/organization/*.pyc
